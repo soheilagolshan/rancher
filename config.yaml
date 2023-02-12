@@ -1,0 +1,21 @@
+#cloud-config
+hostname: rancherTest
+rancher:
+  disable:
+    - password
+    - autologin
+  ssh: 
+    port: 10022
+  network:
+    dns:
+      nameservers:
+        - 1.1.1.1
+        - 8.8.8.8
+    interface:
+      eth0:
+        address: 192.168.161.100
+        dhcp: false
+        gateway: 192.168.161.1
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfW4acSJ6L69CXBeD99Ivjxn20Dt7I2td9k8S4ZqukPweta/p0fga3ixZfbIGLFTreyR8OhlFHmt+npxC5LuFxQU/uxl3CkHocQ9yLEg0oG2di8aqeWaqXV6aQra+8JQwmUI7NNiwF6bN8cVrX03ZCIcEQn3ngd/Htrukdm1T9TgHyhGRSghsO6KnJoCKG9Dg1uUW7u+ulv0p27rlpW7f8BoMTZ/uxGzPebxDDeecegoLoSLgsY2eg8JsO2QZJ6KKUCtc4E9UOUtNOgJdmVbhh0aenO4ULdNduDUONA2ZA53ZHwam5VYNhj0ADboScdiRCi5OCuRwM+o1i19bt2TF7nxBmJF3Kzj4i1vP35vmPFiUfDXrtg4GkyPyRA0/w+/BwbfMKiDvlYq+ePwPbww14iIP2w1tbUycXBXeQpw0gzsCJtaZg9o5p9ir6SS63Ta3BDbMEzqGOzUp6Fpp8hGiE3UaLjyliAO9E0ycam6WGctn+XMcZ7yiMTUoS/lVWfR0=
+       root@kubernetes-virtual-machine
